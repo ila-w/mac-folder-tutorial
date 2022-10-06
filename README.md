@@ -2,6 +2,8 @@
 
 # How to Manipulate Files and Directories using Basic UNIX Commands
 
+### Author
+**Ila Wallace**
 
 <!-- TABLE OF CONTENTS -->
 <details>
