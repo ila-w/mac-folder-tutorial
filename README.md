@@ -1,7 +1,6 @@
-<a name="readme-top"></a>
+<a name="unix-tutorial"></a>
 
 # How to Manipulate Files and Directories using Basic UNIX Commands
-#### Ila Wallace - 30 minutes - Medium Difficulty
 
 <!-- TABLE OF CONTENTS -->
 <details>
