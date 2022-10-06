@@ -2,8 +2,7 @@
 
 # How to Manipulate Files and Directories using Basic UNIX Commands
 
-### Author
-**Ila Wallace**
+#### Ila Wallace - 30 minutes - Medium Difficulty
 
 <!-- TABLE OF CONTENTS -->
 <details>
