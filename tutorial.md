@@ -188,7 +188,7 @@ folder1/
         ├── file3
         └── file4
 ```
-**Warning**
+> **Warning**
 This is a warning
 
 
