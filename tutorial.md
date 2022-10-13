@@ -21,7 +21,6 @@ Lastly, you will need to have a custom folder icon picked out in the form of a .
 
 
 > **Warning** 
-> 
 > Make sure to have a backup of all important files in a separate
 > location like on a flash drive or in OneDrive before procedding any
 > further. Using a UNIX Terminal on any computer can change the
@@ -47,10 +46,6 @@ Lastly, you will need to have a custom folder icon picked out in the form of a .
   - [Further Reading](#further-reading)
 
 -----------------
-
-> **Warning** 
-
-> bleppers
 
 
 ## Opening Terminal
@@ -188,8 +183,7 @@ folder1/
         ├── file3
         └── file4
 ```
-> **Warning**
-This is a warning
+
 
 
 Have a bug or a feature request? Please first read the [issue guidelines](https://reponame/blob/master/CONTRIBUTING.md) and search for existing and closed issues. If your problem or idea is not addressed yet, [please open a new issue](https://reponame/issues/new).
