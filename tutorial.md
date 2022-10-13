@@ -18,8 +18,7 @@ Additionally, you will need to have Xcode command line tools installed. If you d
 
 Lastly, you will need to have a custom folder icon picked out in the form of a .png file. If you do not have one, you may use one of the default options provided in [Default Icons](#default-icons).
 
-> **Warning**
-> This is a warning and is it working?
+
 
 > **Warning** 
 > 
@@ -28,8 +27,6 @@ Lastly, you will need to have a custom folder icon picked out in the form of a .
 > further. Using a UNIX Terminal on any computer can change the
 > computer's file system and data.
 
-> **Warning**
-> This is a warning. Is it working?
 
 ----------
 ### Table of Contents
@@ -50,6 +47,11 @@ Lastly, you will need to have a custom folder icon picked out in the form of a .
   - [Further Reading](#further-reading)
 
 -----------------
+
+> **Warning**
+> blep
+
+
 ## Opening Terminal
 
 To open the Terminal application, you must do the following:
