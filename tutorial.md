@@ -1,16 +1,16 @@
 # How to Change a Folder's Icon using Terminal in Mac OSX
-------------
+---
 
 ```Difficulty: Medium - Time Required: 30 minutes  - By: Ila Wallace```
 
 
-----------------
+---
 ## Introduction
 This tutorial will show you how to change the default folder icon into your own custom folder icon using Terminal in Mac OSX.
 
 After the completion of this tutorial, you will be able to navigate through the Mac OSX directory in Terminal and assign your own custom .png image as a folder icon.
 
---------------
+---
 ## Requirements
 To complete this tutorial, you will need access to a Mac OSX computer that can run a UNIX runtime environment in the application Terminal. You must also have a basic understanding of how to use a Mac OSX computer.
 
@@ -27,6 +27,9 @@ Lastly, you will need to have a custom folder icon picked out in the form of a .
 > location like on a flash drive or in OneDrive before procedding any
 > further. Using a UNIX Terminal on any computer can change the
 > computer's file system and data.
+
+> **Warning**
+> This is a warning. Is it working?
 
 ----------
 ### Table of Contents
