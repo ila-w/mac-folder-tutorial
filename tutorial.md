@@ -18,6 +18,8 @@ Additionally, you will need to have Xcode command line tools installed. If you d
 
 Lastly, you will need to have a custom folder icon picked out in the form of a .png file. If you do not have one, you may use one of the default options provided in [Default Icons](#default-icons).
 
+> **Warning**
+> This is a warning
 
 > **Warning** 
 > 
