@@ -21,8 +21,8 @@ Lastly, you will need to have a custom folder icon picked out in the form of a .
 
 
 > **Warning** 
-> Make sure to have a backup of all important files in a separate
-> location like on a flash drive or in OneDrive before proceeding any
+> Make sure to backup of all important files in a separate
+> location, like on a flash drive or in OneDrive before proceeding any
 > further. Using a UNIX Terminal on any computer can change the
 > computer's file system and data.
 
