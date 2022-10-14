@@ -1,5 +1,7 @@
-# How to Change a Folder's Icon using Terminal in Mac OSX
-> Difficulty: Medium - Time Required: 45 minutes  - By: Ila Wallace
+<h1 align="center">How to Change a Folder's Icon using Terminal in Mac OSX</h1>
+<h6 align="center">Difficulty: Medium - Time Required: 45 minutes  - By: Ila Wallace</h6>
+
+
 
 ---
 ## Introduction
