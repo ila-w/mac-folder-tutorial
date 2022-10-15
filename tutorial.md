@@ -4,30 +4,6 @@
 <body style="background-color:#0d1117;"></body>
 
 
-<style>
-H1{color:DeepSkyBlue !important;}
-H1{font:Helvetica !important;}
-
-H2{color:LightSkyBlue !important;}
-H2{font:Helvetica !important;}
-
-H3{color:white !important;}
-H3{font:Helvetica !important;}
-
-H4{color:white !important;}
-H4{font:Helvetica !important;}
-
-p{color:white !important;}
-p{font:Helvetica !important;}
-
-a{color:dodgerblue !important;}
-
-table{color:white !important;}
-ol{color:white !important;}
-li{color:white !important;}
-</style>
-
-
 
 ---
 ## Introduction
