@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>tutorial_git.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 align="center">How to Change a Folder's Icon using Terminal</h1>
+<p align="center">By: Ila Wallace - Difficulty: Medium - Time Required: 45 minutes</p>
+<body style="background-color:#0d1117;"></body>
+<style>
+H1{color:DeepSkyBlue !important;}
+H1{font:Helvetica !important;}
+
+H2{color:LightSkyBlue !important;}
+H2{font:Helvetica !important;}
+
+H3{color:PowderBlue !important;}
+H3{font:Helvetica !important;}
+
+H4{color:white !important;}
+H4{font:Helvetica !important;}
+
+p{color:white !important;}
+p{font:Helvetica !important;}
+
+a{color:dodgerblue !important;}
+a{font:Helvetica !important;}
+
+table{color:white !important;}
+tr{color:white !important;}
+td{color:white !important;}
+th{color:white !important;}
+
+ol{color:white !important;}
+li{color:white !important;}
+
+pre{border:whitesmoke !important;}
+pre{background-color:#161b22 !important;}
+
+.hljs{color:white !important;}
+.hljs{display:flex !important;}
+.hljs{margin-right:7px !important;}
+
+
+
+</style>
+<hr>
+<h2 id="introduction">Introduction</h2>
+<p>This tutorial will teach you how to change the default folder icon into your own custom folder icon using <code>Terminal</code> in Mac OSX.</p>
+<p>After the completion of this tutorial, you will be able to navigate through the Mac OSX directory using <code>Terminal</code> and assign your own custom <code>.png</code> image as a folder icon.</p>
+<hr>
+<h2 id="requirements">Requirements</h2>
+<p>To complete this tutorial, you will need access to a Mac OSX computer with at least 5 GB of available memory space.</p>
+<p>Additionally, you will need to <code>Xcode Command Line Tools</code> installed on your computer. If you do not already have it installed, the section <a href="#installing-xcode-command-line-tools">Installing Xcode Command Line</a> will guide you through the installation process.</p>
+<p>Lastly, you will need to create a new folder and put a custom icon <code>.png</code> file of your choice inside the folder. If you do not have an image file yet, you may choose from one of the default options provided in the section <a href="#downloading-a-custom-icon">Downloading a Custom Icon</a> or search the internet for one.</p>
+<blockquote>
+<p><span style="color:orange">Warning</span>:
+If you have any important files on your desktop, make sure to back up these files in a separate location like on a flash drive or in OneDrive before proceeding any further. Using <code>Terminal</code> can change your computer's file system and its data.</p>
+</blockquote>
+<hr>
+<h3 id="table-of-contents"><a href="#table-of-contents">Table of Contents</a></h3>
+<ul>
+<li><a href="#introduction-to-terminal">Introduction to Terminal</a>
+<ul>
+<li><a href="#table-of-terminal-commands">Table of Terminal Commands</a></li>
+</ul>
+</li>
+<li><a href="#getting-started">Getting Started</a>
+<ul>
+<li><a href="#creating-a-new-folder">Creating a New Folder</a></li>
+<li><a href="#downloading-a-custom-icon">Downloading a Custom Icon</a></li>
+<li><a href="#opening-a-new-terminal-window">Opening a New Terminal Window</a></li>
+<li><a href="#installing-xcode-command-line-tools">Installing Xcode Command Line Tools</a></li>
+</ul>
+</li>
+<li><a href="#navigating-a-directory">Navigating a Directory</a>
+<ul>
+<li><a href="#identifying-the-current-location">Identifying the Current Location</a></li>
+<li><a href="#changing-the-current-location">Changing the Current Location</a></li>
+</ul>
+</li>
+<li><a href="#changing-a-folders-default-icon">Changing a Folder's Default Icon</a>
+<ul>
+<li><a href="#generating-a-custom-icon-for-a-folder">Generating a Custom Icon for a Folder</a></li>
+<li><a href="#attaching-a-custom-icon-to-a-folder">Attaching a Custom Icon to a Folder</a></li>
+<li><a href="#hiding-a-custom-icon-in-a-folder">Hiding a Custom Icon in a Folder</a></li>
+<li><a href="#removing-a-custom-icon-from-a-folder">Removing a Custom Icon from a Folder</a></li>
+</ul>
+</li>
+<li><a href="#wrap-up">Wrap Up</a>
+<ul>
+<li><a href="#further-reading">Further Reading</a></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="introduction-to-terminal">Introduction to Terminal</h2>
+<p>This section covers important concepts regarding using <code>Terminal</code> as well as providing a <a href="#reference">reference table</a> of <code>Terminal</code> commands that will be used in this tutorial.</p>
+<!--Terminal Commands List-->
+<h3 id="table-of-terminal-commands"><a href="#reference">Table of Terminal Commands</a></h3>
+<p>This reference table lists all terminal commands that appear in this tutorial and states briefly what they do.</p>
+<table>
+<thead>
+<tr>
+<th>Terminal Commands</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>xcode-select --install</code></td>
+<td>Installs the <code>Xcode Command Line Tools</code></td>
+</tr>
+<tr>
+<td><code>xcode-select -v</code></td>
+<td>Prints the current version of installed <code>Xcode Command Line Tools</code></td>
+</tr>
+<tr>
+<td><code>pwd</code></td>
+<td>Prints the current location's address</td>
+</tr>
+<tr>
+<td><code>cd ~; pwd</code></td>
+<td>Moves to the user's home directory and prints the location's address</td>
+</tr>
+<tr>
+<td><code>cd /Desktop/custom</code></td>
+<td>Moves to the <code>custom</code> directory</td>
+</tr>
+<tr>
+<td><code>sips -i icon.png</code></td>
+<td>Formats image <code>.png</code> file to icon <code>.png</code> file</td>
+</tr>
+<tr>
+<td><code>DeRez -only icns icon.png &gt; tmpicns.rsrc</code></td>
+<td>Converts <code>.png</code> file to <code>.icns</code> file referenced through the <code>tmpicns.rsrc</code> file</td>
+</tr>
+<tr>
+<td><code>Rez -a tmpicns.rsrc -o Icon$'\r'</code></td>
+<td>Generates <code>Icon?</code> file from <code>.icns</code> reference file</td>
+</tr>
+<tr>
+<td><code>SetFile -a C .</code></td>
+<td>Sets <code>Icon?</code> file  as the folder's custom icon</td>
+</tr>
+<tr>
+<td><code>SetFile -a V Icon$'\r'</code></td>
+<td>Hides the <code>Icon?</code> file inside the folder</td>
+</tr>
+<tr>
+<td><code>rm tmpicns.rsrc icon.png</code></td>
+<td>Removes unecessary leftover files</td>
+</tr>
+<tr>
+<td><code>rm Icon$'\r'</code></td>
+<td>Deletes the custom icon from the folder</td>
+</tr>
+</tbody>
+</table>
+<h5 align="center"><a href="#table-of-contents">Back to Table of Contents</a></h5>
+<hr>
+<h2 id="getting-started">Getting Started</h2>
+<p>This section covers the preliminary tasks required for this tutorial, which are:</p>
+<ol>
+<li>
+<p><a href="#creating-a-new-folder">Creating a new folder</a> on your desktop and renaming it <code>custom</code></p>
+</li>
+<li>
+<p><a href="#downloading-a-custom-icon">Downloading a custom icon</a> image file and saving it in the <code>custom</code> folder as <code>icon.png</code></p>
+</li>
+<li>
+<p><a href="#opening-a-new-terminal-window">Opening a new <code>Terminal</code> window</a></p>
+</li>
+<li>
+<p><a href="#installing-xcode-command-line-tools">Installing <code>Xcode Command Line Tools</code></a> onto your computer</p>
+</li>
+</ol>
+<br>
+<blockquote>
+<p><span style="color:orange">Note</span>:
+For the purposes of this tutorial, the folder will be refered to as <code>custom</code> and the icon <code>.png</code> file as <code>icon.png</code>. These files can be named anything; however, it is recommended to only change the custom folder name once you have completed the tutorial as <code>Terminal</code> syntax errors can occur when using special symbols.</p>
+</blockquote>
+<br>
+<p>When all preliminary tasks have been completed, you can move onto the section on how to <a href="#navigating-a-directory">navigate through Mac OSX's directory file system</a>.</p>
+<br>
+<!--Making a Folder-->
+<h3 id="creating-a-new-folder">Creating a New Folder</h3>
+<p>To create a new folder on your desktop, you must do the following:</p>
+<ol>
+<li>
+<p>Navigate to your desktop home screen</p>
+</li>
+<li>
+<p>Move your cursor to an empty location and then press two fingers down on the track pad, or if you have an external mouse, right click on the folder to select it</p>
+</li>
+<li>
+<p>Click on the option called <code>New Folder</code></p>
+</li>
+</ol>
+<br>
+<p>A blue default folder named <code>untitled folder</code> will now appear on your desktop screen.</p>
+<br>
+<p>To rename the new folder, you must do the following:</p>
+<ol>
+<li>
+<p>Move your cursor over the folder and then select the new folder</p>
+</li>
+<li>
+<p>Click on the option called <code>Rename</code></p>
+</li>
+<li>
+<p>Type the following text into highlighted folder name text box and then hit  <code>Return↩︎</code>:</p>
+<pre class="hljs"><code><div>custom
+</div></code></pre>
+</li>
+</ol>
+<br>
+<blockquote>
+<p><span style="color:orange">Checkpoint</span>:
+A new folder named <code>custom</code> should now be on your desktop screen.</p>
+</blockquote>
+<br>
+<!--Downloading Image File-->
+<h3 id="downloading-a-custom-icon">Downloading a Custom Icon</h3>
+<p>In order to change the default folder icon, we need to have a new icon file to change it to.</p>
+<p>If you have a custom icon downloaded to your computer, move a copy of the image to the icon to your desktop and name it <code>icon.png</code>. Then, you can skip to <a href="#installing-xcode-command-line-tools">Installing Xcode Command Line Tools</a>.</p>
+<p>If you do not have a custom .png file on hand, you can download an icon from <a href="https://icons8.com/icons/set/mac-folder">here</a>. Make sure to name it <code>icon.png</code> and save it in your desktop folder <code>custom</code>.</p>
+<br>
+<blockquote>
+<p><span style="color:orange">Checkpoint</span>:
+The custom image should now be inside the <code>custom</code> folder.</p>
+</blockquote>
+<br>
+<!--Opening Terminal-->
+<h3 id="opening-a-new-terminal-window">Opening a New Terminal Window</h3>
+<p>To open the Terminal application, you must do the following:</p>
+<ol>
+<li>
+<p>Press both the <code>Command ⌘</code> and <code>Space bar</code> keys on your keyboard at the same time to open <code>Spotlight Search</code></p>
+</li>
+<li>
+<p>Type the following text into the <code>Spotlight Search</code> prompt:</p>
+<pre class="hljs"><code><div>Terminal
+</div></code></pre>
+</li>
+<li>
+<p>Press the <code>Return↩︎</code> key on your keyboard.</p>
+</li>
+</ol>
+<br>
+<blockquote>
+<p><span style="color:orange">Checkpoint</span>:
+A new <code>Terminal</code> window should be open and visible on your screen.</p>
+</blockquote>
+<br>
+<!--Xcode tools installation-->
+<h3 id="installing-xcode-command-line-tools">Installing Xcode Command Line Tools</h3>
+<p>To install <code>Xcode Command Line Tools</code> onto your computer, you must do the following:</p>
+<ol>
+<li>
+<p>Open a new <code>Terminal</code> window</p>
+</li>
+<li>
+<p>Type the following text into the prompt:</p>
+<pre class="hljs"><code><div>xcode-select --install
+</div></code></pre>
+</li>
+<li>
+<p>When the pop up appears asking you if you would like to install the tools, click on the option <code>Install</code>.</p>
+</li>
+<li>
+<p>When the pop up appears stating the software was installed, click on the <code>Done</code> option.</p>
+</li>
+</ol>
+<br>
+<p>If you would like to confirm your download, you can do the following:</p>
+<ol>
+<li>
+<p>Open a new <code>Terminal</code> window</p>
+</li>
+<li>
+<p>Type the following text into the prompt and then press <code>Return↩︎</code>:</p>
+<pre class="hljs"><code><div>xcode-select -v
+</div></code></pre>
+</li>
+</ol>
+<br>
+<p>The resulting output prints the current version of your <code>Xcode Command Line Tools</code> where <code>#</code> represents a version number:</p>
+<pre class="hljs"><code><div>xcode-select version #.
+</div></code></pre>
+<br>
+<blockquote>
+<p><span style="color:orange"><strong>Checkpoint</strong></span>:
+<code>Xcode Command Line Tools</code> should be now be installed on your computer.</p>
+</blockquote>
+<h5 align="center"><a href="#table-of-contents">Back to Table of Contents</a></h5>
+<hr>
+<h2 id="navigating-a-directory">Navigating a Directory</h2>
+<p>When using <code>Terminal</code> for any task, it is important to have a basic understanding of where our current location in the Mac OSX directory file system and how to move through the directory file system.</p>
+<p>If you know how to navigate a directory file system in <code>Terminal</code>, you may skip to <a href="#changing-a-folders-default-icon">Changing a Folder's Default Icon</a>.</p>
+<br>
+<!--Finding the working directory location-->
+<h3 id="identifying-the-current-location">Identifying the Current Location</h3>
+<p>To identify our current location in the directory tree, we can use <code>pwd</code>.</p>
+<p>Type the following text into the terminal prompt and then hit <code>Return↩︎</code>:</p>
+<pre class="hljs"><code><div><span class="hljs-built_in">pwd</span>
+</div></code></pre>
+<p>The output printed to the console is shown below, where <code>username</code> is the name of your computer's current user.</p>
+<pre class="hljs"><code><div>Users/username
+</div></code></pre>
+<br>
+<p>If the output printed to the console does not match the output format, type the following and then hit <code>Return↩︎</code>:</p>
+<pre class="hljs"><code><div><span class="hljs-built_in">cd</span> ~; <span class="hljs-built_in">pwd</span>
+</div></code></pre>
+<br>
+<p>The figure below is an asbtract representation of our current location. Congrats, you are now in your computer's home directory!</p>
+<pre class="hljs"><code><div>Users/
+└── username/
+</div></code></pre>
+<br>
+<blockquote>
+<p><strong>Checkpoint</strong>: The current location should be inside the <code>username</code> folder directory.</p>
+</blockquote>
+<br>
+<!--Moving to folder location-->
+<h3 id="changing-the-current-location">Changing the Current Location</h3>
+<p>Now that we know where we are, we need to move to where we need to go.</p>
+<blockquote>
+<p><span style="color:orange"><strong>Note</strong></span>:
+For the purpose of this tutorial, we will be working in your Desktop directory. If you would like to learn more about how to move through other directories, please see [insert link here].</p>
+</blockquote>
+<br>
+<p>To change our current directory to the Desktop, we can use <code>cd</code>.</p>
+<p>Type the following text into the terminal prompt and then hit <code>Return↩︎</code>:</p>
+<pre class="hljs"><code><div><span class="hljs-built_in">cd</span> Desktop/custom/
+</div></code></pre>
+<p>If you would like to confirm you are in the Desktop directory, type the following text into the terminal prompt and then hit <code>Return↩︎</code>:</p>
+<pre class="hljs"><code><div><span class="hljs-built_in">pwd</span>
+</div></code></pre>
+<p>Output:</p>
+<pre class="hljs"><code><div>/Users/username/Desktop/custom
+</div></code></pre>
+<br>
+<p>The figure below is an abstraction of our current location. We are now in the <code>custom</code> folder directory.</p>
+<pre class="hljs"><code><div>Users/
+└── username/
+    └── Desktop/
+        └── custom/
+            ├── icon.png
+</div></code></pre>
+<br>
+<blockquote>
+<p><strong>Checkpoint</strong>: The current location should be inside the <code>custom</code> folder directory.</p>
+</blockquote>
+<h5 align="center"><a href="#table-of-contents">Back to Table of Contents</a></h5>
+<hr>
+<h2 id="changing-a-folders-default-icon">Changing a Folder's Default Icon</h2>
+<!--Generating Icon format-->
+<h3 id="generating-a-custom-icon-for-a-folder">Generating a Custom Icon for a Folder</h3>
+<p>Now that we are in the right location, we can now start converting <code>icon.png</code> into a usable icon for the <code>custom</code> folder.</p>
+<p>To convert the image file, you must do the following:</p>
+<ol>
+<li>
+<p>Transform the <code>.png</code> file into its own icon by typing the following text into the terminal prompt and then hit <code>Return↩︎</code>:</p>
+<pre class="hljs"><code><div>sips -i icon.png
+</div></code></pre>
+</li>
+<li>
+<p>Type the following text into the terminal prompt and then hit <code>Return↩︎</code>:</p>
+<pre class="hljs"><code><div>DeRez -only icns icon.png &gt; tmpicns.rsrc
+</div></code></pre>
+<p>This command transforms the .png file into an .icns file and points to the newly converted file using the tmpicns.rsrc file.</p>
+</li>
+<li>
+<p>Type the following text into the terminal prompt and then hit <code>Return↩︎</code>:</p>
+<pre class="hljs"><code><div>Rez -a tmpicns.rsrc -o Icon$<span class="hljs-string">'\r'</span>
+</div></code></pre>
+<p>This command generates the finalized icon file <code>Icon?</code> as a usable folder icon.</p>
+</li>
+</ol>
+<br>
+<blockquote>
+<p><strong>Checkpoint</strong>: The custom image file <code>Icon?</code> should be generated inside the <code>custom</code> folder.</p>
+</blockquote>
+<br>
+<!--Add Custom Icon-->
+<h3 id="attaching-a-custom-icon-to-a-folder">Attaching a Custom Icon to a Folder</h3>
+<p>With the correct icon file generated, we can now attach it to the folder itself so it can be displayed.</p>
+<p>To attach the icon and set it visible, type the following text into the terminal prompt and then hit <code>Return↩︎</code>:</p>
+<pre class="hljs"><code><div>SetFile -a C .
+</div></code></pre>
+<br>
+<blockquote>
+<p><strong>Checkpoint</strong>: The custom image file <code>Icon?</code> should now be visible as the <code>custom</code> folder's new icon.</p>
+</blockquote>
+<br>
+<!---Hide Icon File-->
+<h3 id="hiding-a-custom-icon-in-a-folder">Hiding a Custom Icon in a Folder</h3>
+<p>To avoid any accidental deletion of the <code>Icon?</code> file when working within your newly customized folder, we need to hide the file.</p>
+<br>
+<p>To hide the <code>Icon?</code> file, type the following text into the terminal prompt and then hit <code>Return↩︎</code>:</p>
+<pre class="hljs"><code><div>SetFile -a V Icon$<span class="hljs-string">'\r'</span>
+</div></code></pre>
+<br>
+<p>In addition, we can use <code>rm</code> to remove the <code>icon.png</code> and <code>tmpicns.rsrc</code> files will keep your newly customized folder tidy.</p>
+<br>
+<p>To remove the files, type the following text into the terminal prompt and then hit <code>Return↩︎</code>:</p>
+<pre class="hljs"><code><div>rm tmpicns.rsrc icon.png
+</div></code></pre>
+<br>
+<blockquote>
+<p><strong>Checkpoint</strong>: The custom image file <code>Icon?</code> should now be invisible in the <code>custom</code>. The files <code>tmpicns.rsrc</code> and <code>icon.png</code> should also be gone from the folder.</p>
+</blockquote>
+<br>
+<!--Remove Custom Icon-->
+<h3 id="removing-a-custom-icon-from-a-folder">Removing a Custom Icon from a Folder</h3>
+<p>If at any point you wish to remove the custom icon, you can do so by removing the hidden <code>Icon?</code> file.</p>
+<br>
+<p>After <a href="#navigating-a-directory">navigating</a> back into your <code>custom</code> folder directory, type the following text into the terminal prompt and then press <code>Return↩︎</code>:</p>
+<pre class="hljs"><code><div>rm Icon$<span class="hljs-string">'\r'</span>
+</div></code></pre>
+<br>
+<p>The <code>Icon?</code> file will be removed from the <code>custom</code> directory, allowing the folder to return to its default blue folder icon.</p>
+<h5 align="center"><a href="#table-of-contents">Back to Table of Contents</a></h5>
+<hr>
+<h2 id="wrap-up">Wrap Up</h2>
+<p>In this tutorial, you have learned how to:</p>
+<ol>
+<li>Open Terminal</li>
+<li>Change to the new folder's directory location</li>
+<li>Generate the icon file</li>
+<li>Attach the icon to the folder</li>
+<li>Hide the icon file</li>
+<li>Remove unecessary files</li>
+<li>Remove the custom icon from the folder</li>
+</ol>
+<h3 id="further-reading">Further Reading</h3>
+<h5 align="center"><a href="#table-of-contents">Back to Table of Contents</a></h5>
+
+</body>
+</html>
