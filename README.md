@@ -259,9 +259,10 @@ Users/
 ### Changing the Current Location
 Now that we know where we are, we need to move to where we need to go. 
 
-> **Note**: For the purpose of this tutorial, we will be working in your
+> [!NOTE]
+> For the purpose of this tutorial, we will be working in your
 > Desktop directory. If you would like to learn more about how to move
-> through other directories, please see [insert link here]. 
+> through other directories, please see [What is a Command Prompt?](https://www.geeksforgeeks.org/operating-systems/what-is-a-command-prompt/). 
 
 <br>
 
