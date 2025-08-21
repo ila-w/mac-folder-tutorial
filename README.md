@@ -399,7 +399,4 @@ In this tutorial, you have learned how to:
 6) Remove unecessary files
 7)  Remove the custom icon from the folder
 
-
-### Further Reading
-
 <h6 align="center"><a href="#table-of-contents">Back to top</a></h6>
