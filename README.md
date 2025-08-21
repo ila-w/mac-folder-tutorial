@@ -47,7 +47,6 @@ Lastly, you will need to create a target folder and download a custom icon picke
     - [Hiding a Custom Icon in a Folder](#hiding-a-custom-icon-in-a-folder)
     - [Removing a Custom Icon from a Folder](#removing-a-custom-icon-from-a-folder)
   - [Wrap Up](#wrap-up)
-    - [Further Reading](#further-reading)
 --- 
 
 ## Introduction to Terminal
@@ -85,7 +84,10 @@ The downloads required for this tutorial are Xcode command line tools and at lea
 ### Creating a New Folder
 If you know how to create a new folder, rename your folder as ``custom`` and place your custom image into the folder. Then, skip to [Navigating Directories](#navigating-directories).
 
-> **Note**: For the purposes of this tutorial, we will name and refer to the new folder as ``custom``, but you can give the folder your own personalized name.
+<br/>
+
+> [!NOTE] 
+> For the purposes of this tutorial, we will name and refer to the new folder as ``custom``, but you can give the folder your own personalized name.
 
 <br>
 
@@ -221,7 +223,9 @@ The output printed to the console is shown below, where `username` is the name o
   $ Users/username
 ```
 
-> **Note**:
+<br/>
+
+> [!NOTE]
 > If the output printed to the console does not match the output format, type the following
 > and then hit `Return↩︎`:
 > ```sh
