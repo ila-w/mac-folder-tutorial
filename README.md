@@ -208,7 +208,8 @@ The resulting output prints your Xcode tools current installed version to the co
 ## Navigating a Directory
 When using ``Terminal`` for any task, it is important to have a basic understanding of where our current location in the Mac OSX directory file system and how to move through the directory file system.
 
-If you know how to navigate a directory file system in ``Terminal``, you may skip to [Generating Icons](#generating-icons).
+>[!TIP]
+> If you know how to navigate a directory file system in ``Terminal``, you may skip to [Generating Icons](#generating-a-custom-icon-for-a-folder).
 
 <br>
 
