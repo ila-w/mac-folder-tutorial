@@ -22,7 +22,7 @@ Lastly, you will need to create a target folder and download a custom icon picke
 
 <br>
 
-> **Warning**:
+> [!WARNING]
 > If you have any important files on your desktop, make sure to back up
 > these files in a separate location like on a flash drive or in
 > OneDrive before proceeding any further. Using a UNIX Terminal can
@@ -99,7 +99,8 @@ To create a new folder, you must do the following:
    
 3) Click on the option ``New Folder``
    
-You should now see a blue default folder icon appear on your desktop. 
+>[!IMPORTANT]
+> You should now see a blue default folder icon appear on your desktop. 
 
 <br>
 
@@ -112,7 +113,8 @@ To rename the folder, you must do the following:
    
 3) Type ``custom`` and then hit  `Return↩︎`
    
-Your folder should now be named ``custom``.
+>[!IMPORTANT]
+> Your folder should now be named ``custom``.
 
 
 <br>
@@ -121,7 +123,8 @@ Lastly, select the image file with your cursor and then drag it into the ``custo
 
 <br>
 
-> **Checkpoint**: The custom image should now be inside the ``custom`` folder.
+>[!IMPORTANT]
+> The custom image should now be inside the ``custom`` folder.
 
 <br>
 
@@ -135,7 +138,8 @@ If you do not have a custom .png file on hand, you can download an icon from [he
 
 <br>
 
-> **Checkpoint**: The custom image ``icon.png`` should now be saved on your desktop.
+>[!IMPORTANT]
+> The custom image ``icon.png`` should now be saved on your desktop.
 
 <br>
 
@@ -156,7 +160,8 @@ To open the Terminal application, you must do the following:
 
 <br>
 
-> **Checkpoint**: A new Terminal window should be open and visible on your screen.
+>[!IMPORTANT]
+> A new Terminal window should be open and visible on your screen.
 
 <br>
 
@@ -193,7 +198,8 @@ The resulting output prints your Xcode tools current installed version to the co
 
 <br>
 
-> **Checkpoint**: The Xcode command line tools should be installed on your computer.
+>[!IMPORTANT]
+> The Xcode command line tools should be installed on your computer.
 
 <h6 align="center"><a href="#table-of-contents">Back to top</a></h6>
 
@@ -243,7 +249,8 @@ Users/
 
 <br>
 
-> **Checkpoint**: The current location should be inside the ``username`` folder directory.
+>[!IMPORTANT]
+> The current location should be inside the ``username`` folder directory.
 
 <br>
 
@@ -290,7 +297,8 @@ Users/
 
 <br>
 
-> **Checkpoint**: The current location should be inside the ``custom`` folder directory.
+>[!IMPORTANT]
+> The current location should be inside the ``custom`` folder directory.
 
 <h6 align="center"><a href="#table-of-contents">Back to top</a></h6>
 
@@ -326,7 +334,8 @@ To convert the image file, you must do the following:
 
 <br>
 
-> **Checkpoint**: The custom image file ``Icon?`` should be generated inside the ``custom`` folder.
+>[!IMPORTANT]
+> The custom image file ``Icon?`` should be generated inside the ``custom`` folder.
 
 <br>
 
@@ -343,7 +352,8 @@ SetFile -a C .
 
 <br>
 
-> **Checkpoint**: The custom image file ``Icon?`` should now be visible as the ``custom`` folder's new icon.
+>[!IMPORTANT]
+> The custom image file ``Icon?`` should now be visible as the ``custom`` folder's new icon.
 
 <br>
 
@@ -370,7 +380,8 @@ rm tmpicns.rsrc icon.png
 <br>
 
 
-> **Checkpoint**: The custom image file ``Icon?`` should now be invisible in the ``custom``. The files ``tmpicns.rsrc`` and ``icon.png`` should also be gone from the folder.
+>[!IMPORTANT]
+> The custom image file ``Icon?`` should now be invisible in the ``custom``. The files ``tmpicns.rsrc`` and ``icon.png`` should also be gone from the folder.
 
 <br>
 
